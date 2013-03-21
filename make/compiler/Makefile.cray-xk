@@ -1,0 +1,9 @@
+#
+# Copyright (c) 2004-2012, Cray Inc.  (See LICENSE file for more details)
+#
+
+#
+# Settings for the Cray XK series
+#
+
+include $(CHPL_MAKE_HOME)/make/compiler/Makefile.cray-xe

@@ -1,0 +1,19 @@
+#
+# Copyright (c) 2004-2012, Cray Inc.  (See LICENSE file for more details)
+#
+
+
+include $(RUNTIME_ROOT)/make/Makefile.runtime.commonrules
+
+depend: $(DEPENDSUBDIRS) echoruntimedir $(DEPEND_STAMP) $(DEPEND_DEPS)
+	@echo Updating subdir dependences...
+	@rm -f $(SVN_DEPENDS).tmp
+	@echo > $(SVN_DEPENDS).tmp
+	$(OTHER_DEPEND_RULES)
+	@$(MAKE) filedepend
+	@mv -f $(SVN_DEPENDS).tmp $(SVN_DEPENDS)
+
+SVN_DEPS = $(addsuffix .depend,$(basename $(SVN_SRCS)))
+
+filedepend: $(SVN_DEPS)
+	@true

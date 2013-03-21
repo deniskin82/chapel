@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2004-2012, Cray Inc.  (See LICENSE file for more details)
+#
+
+ifeq ($(CHPL_TARGET_PLATFORM),xmt-sim)
+AR = /usr/bin/ar
+RANLIB = /usr/bin/ranlib
+endif
+
+ifeq ($(CHPL_TARGET_PLATFORM),xmt)
+AR = /usr/bin/ar
+RANLIB = /usr/bin/ranlib
+endif
